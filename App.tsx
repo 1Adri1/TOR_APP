@@ -3,13 +3,13 @@ import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { API_KEY, URL } from "@env";
 
 
-function Example() {
+function Tor() {
   let [temperatur, setTemp] = useState(0);
   
 
-   // setInterval(function(){updatetemp();}, 60000);
+   // setInterval(function(){updateTemp();}, 60000);
 
-  function updatetemp(){
+  function updateTemp(){
     let text : any;
     let temperatur : number;
     
@@ -32,9 +32,9 @@ function Example() {
       .catch(error => console.log('error', error));
     }
 
-    updatetemp();
+    updateTemp();
     
-  function myFunction(tor : string) {
+  function tor(tor : string) {
     let myHeaders = new Headers();
     myHeaders.append('Access-Control-Allow-Origin', '*');
     myHeaders.append("Authorization", API_KEY);
@@ -66,27 +66,27 @@ function Example() {
 
         <Pressable
           style={styles.button}
-          onPress={() => myFunction(URL+'/tor?tor=0')}>
+          onPress={() => tor(URL+'/tor?tor=0')}>
           <Text style={styles.text}>{'TOR 0'}</Text>
         </Pressable>
         <Pressable
           style={styles.button}
-          onPress={() => myFunction(URL+'/tor?tor=1')}>
+          onPress={() => tor(URL+'/tor?tor=1')}>
           <Text style={styles.text}>{'TOR 1'}</Text>
         </Pressable>
         <Pressable
           style={styles.button}
-          onPress={() => myFunction(URL+'/tor?tor=2')}>
+          onPress={() => tor(URL+'/tor?tor=2')}>
           <Text style={styles.text}>{'TOR 2'}</Text>
         </Pressable>
         <Pressable
           style={styles.button}
-          onPress={() => myFunction(URL+'/tor?tor=3')}>
+          onPress={() => tor(URL+'/tor?tor=3')}>
           <Text style={styles.text}>{'TOR 3'}</Text>
         </Pressable>
         <Pressable
           style={styles.button}
-          onPress={() => myFunction(URL+'/tor?tor=4')}>
+          onPress={() => tor(URL+'/tor?tor=4')}>
           <Text style={styles.text}>{'TOR 4'}</Text>
         </Pressable>
     </View>
@@ -137,4 +137,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Example;
+export default Tor;
