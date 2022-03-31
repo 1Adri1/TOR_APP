@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
-import { API_KEY } from "@env";
+import { API_KEY, URL } from "@env";
 
 
 function Example() {
@@ -18,7 +18,7 @@ function Example() {
       redirect: 'follow'
     };
     
-    fetch("https://stroebel.mooo.com/Temperatur/ofen.json", requestOptions)
+    fetch(URL+"/Temperatur/ofen.json", requestOptions)
       .then(response => response.json())
       .then(result => {
       console.log(result);
@@ -66,27 +66,27 @@ function Example() {
 
         <Pressable
           style={styles.button}
-          onPress={() => myFunction('https://stroebel.mooo.com/tor?tor=0')}>
+          onPress={() => myFunction(URL+'/tor?tor=0')}>
           <Text style={styles.text}>{'TOR 0'}</Text>
         </Pressable>
         <Pressable
           style={styles.button}
-          onPress={() => myFunction('https://stroebel.mooo.com/tor?tor=1')}>
+          onPress={() => myFunction(URL+'/tor?tor=1')}>
           <Text style={styles.text}>{'TOR 1'}</Text>
         </Pressable>
         <Pressable
           style={styles.button}
-          onPress={() => myFunction('https://stroebel.mooo.com/tor?tor=2')}>
+          onPress={() => myFunction(URL+'/tor?tor=2')}>
           <Text style={styles.text}>{'TOR 2'}</Text>
         </Pressable>
         <Pressable
           style={styles.button}
-          onPress={() => myFunction('https://stroebel.mooo.com/tor?tor=3')}>
+          onPress={() => myFunction(URL+'/tor?tor=3')}>
           <Text style={styles.text}>{'TOR 3'}</Text>
         </Pressable>
         <Pressable
           style={styles.button}
-          onPress={() => myFunction('https://stroebel.mooo.com/tor?tor=4')}>
+          onPress={() => myFunction(URL+'/tor?tor=4')}>
           <Text style={styles.text}>{'TOR 4'}</Text>
         </Pressable>
     </View>
